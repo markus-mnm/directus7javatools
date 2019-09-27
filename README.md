@@ -1,8 +1,5 @@
 # Java tools and SDK for Directus 7
 
-
-test
-
 ## Quickstart
 
 Requires JDK11+
@@ -53,6 +50,3 @@ and some other tidbits
 ## Directus Admin Tools CLI
 
 An executable wrapping the Directus Java Admin SDK
-
-20190927_163104
-20190927_163209
