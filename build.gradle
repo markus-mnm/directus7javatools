@@ -1,0 +1,42 @@
+plugins {
+   id 'java-library'
+   id 'com.github.johnrengelman.shadow' version '5.1.0'
+}
+
+group = 'io.directus.tools'
+version = "0.1.1"
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation("org.json:json:20180813")
+}
+
+tasks.withType(AbstractArchiveTask) {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+}
+
+jar {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                   'Implementation-Version': project.version)
+        attributes 'Main-Class': 'io.directus.tools.DirectusToolsCli'
+    }
+}
+
+shadowJar {
+    baseName = project.name + 'Cli'
+    classifier = null
+    version = project.version
+}
+
+defaultTasks("shadowJar")
+
