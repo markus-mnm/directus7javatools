@@ -55,9 +55,12 @@ A single class wrapping a few api endpoints to
 
 An executable wrapping the Directus Java Admin SDK
 
+## Use in Gradle Tassk
+
+Check out https://github.com/markus-mnm/directus-demo-article-schema for an example of how to use this this project.
 
 ## To Dos
 
-* Create a changelog of changes to keep track of schema changes, similar to liquibase (or implement it against an API)
+* Create a changelog of changes to keep track of schema changes, similar to liquibase (or implement it against as a liquibase extension via API calls in case that is feasible & sensible)
 * Add permission grants (e.g. when adding a new collection, grant permission to a set of groups)
 * Clean up
