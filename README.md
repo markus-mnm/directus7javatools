@@ -1,5 +1,7 @@
 # Java tools and SDK for Directus 7
 
+Always backup you data before using these tools.
+
 ## Quickstart
 
 Requires JDK11+
@@ -24,10 +26,12 @@ Then use with e.g. :
 
 ## What's this about
 
-This is work in progress it is based on some kotlin gradle tasks use internally to promote Directus collection schema changes into different staging environments, which was  decompiled into Java to be used outside of gradle in a more generally known format.
+work in progress....
 
-We decided to push this out to allow us to publish bug reports in a consistent manner.
-We attempted to reduce the amount of dependencies to keep the jar small (the JDK is large enough).
+This is used in gradle tasks to promote Directus collection schema changes into different staging environments.
+
+It can be used to publish bug reports in a consistent manner.
+The number of dependencies is intentionally kept small to keep the jar small (the JDK is large enough).
 
 Currently it consists of two parts:
 
@@ -39,14 +43,20 @@ Currently it consists of two parts:
 A single class wrapping a few api endpoints to 
 
 * create collections
-* delete collections - but this is not exposed in the CLI
+* delete collections - this is not exposed in the CLI
 * patch collections
-* rename fields - the main reason we started this, since the only way to do it is to create a new field with the new name and then copy the data and drop the old field
+* rename fields - this the main reason we started this, since the only way to do it is to create a new field with the new name and then copy the data and drop the old field
 * drop fields
 * create/delete M2O
 
-and some other tidbits
 
 ## Directus Admin Tools CLI
 
 An executable wrapping the Directus Java Admin SDK
+
+
+## To Dos
+
+* Create a changelog of changes to keep track of schema changes, similar to liquibase (or implement it against an API)
+* Add permission grants (e.g. when adding a new collection, grant permission to a set of groups)
+* Clean up
