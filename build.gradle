@@ -1,6 +1,24 @@
 plugins {
    id 'java-library'
    id 'com.github.johnrengelman.shadow' version '5.1.0'
+   id 'maven-publish'
+}
+
+publishing {
+    repositories {
+        maven {
+            credentials {
+                username project.findProperty('nexus.user')
+                password project.findProperty('nexus.password')
+            }
+            url project.findProperty('nexus.url')
+        }
+    }
+    publications {
+        mavenJava(MavenPublication) {
+            artifact shadowJar
+        }
+    }
 }
 
 group = 'io.directus.tools'

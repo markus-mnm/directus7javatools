@@ -25,6 +25,11 @@ Then use with e.g. :
     directus api_info # print api info
 
 
+ publish with e.g.
+
+    ./gradlew --info  -Pnexus.user=someUser -Pnexus.password=somePassword -Pnexus.url=https://nexus.some.host/repository/external publish
+
+
 ## What's this about
 
 work in progress....
